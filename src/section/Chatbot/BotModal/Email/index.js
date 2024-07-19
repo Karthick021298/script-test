@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 		background: '#ECEEF5',
 		'& .MuiTypography-h3': {
 			fontSize: themeConfig.typography.h3.fontSize,
-			fontFamily: themeConfig.typography.h3.fontFamily,
+			
 			fontWeight: 500,
 		},
 	},
@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		'& .MuiInputBase-root': {
 			fontSize: themeConfig.typography.subtitle1.fontSize,
-			fontFamily: themeConfig.typography.subtitle1.fontFamily,
+			
 			// height: 40,
 			borderRadius: '18px',
 			background: '#fff',
@@ -195,7 +195,7 @@ const EmailTemplate = ({ domainData }) => {
 										textTransform: 'capitalize',
 										color: '#fff',
 										fontSize: themeConfig.typography.subtitle1.fontSize,
-										fontFamily: themeConfig.typography.subtitle1.fontFamily,
+										
 										'&:hover': {
 											background: themeConfig.palette.lyfngo.primary.main,
 										},

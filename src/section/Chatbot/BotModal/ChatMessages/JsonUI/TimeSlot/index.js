@@ -290,7 +290,7 @@ const TimeSlot = (props) => {
 						textTransform: 'capitalize',
 						color: '#fff',
 						padding: 0,
-						fontFamily: themeConfig.typography.subtitle1.fontFamily,
+						
 						'&:hover': {
 							background: themeConfig.palette.lyfngo.primary.main,
 						},

@@ -5,7 +5,6 @@ import BotApi from '@/service/BotApi'
 
 const useStyles = makeStyles((theme) => ({
 	input: {
-		fontFamily: 'Poppins, sans-serif',
 		borderRadius: '5px',
 		border: '1px solid #ccc',
 		boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)',

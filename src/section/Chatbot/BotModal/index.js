@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: 'center',
 		'& .MuiTypography-h6': {
 			fontSize: 15,
-			fontFamily: themeConfig.typography.h5.fontFamily,
+			
 			color: '#fff',
 		},
 		'& .MuiTypography-body1': {
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 			alignItems: 'center',
 			justifyContent: 'center',
 			fontSize: themeConfig.typography.h3.fontSize,
-			fontFamily: themeConfig.typography.h3.fontFamily,
+			
 			color: '#fff',
 		},
 		'& .MuiSvgIcon-root': {
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 		background: '#ECEEF5',
 		'& .MuiTypography-h3': {
 			fontSize: themeConfig.typography.h3.fontSize,
-			fontFamily: themeConfig.typography.h3.fontFamily,
+			
 			fontWeight: 500,
 		},
 	},
@@ -407,7 +407,7 @@ const WhatsApp = () => {
 							borderRadius: 50,
 							paddingInline: 3,
 							fontSize: themeConfig.typography.subtitle1.fontSize,
-							fontFamily: themeConfig.typography.subtitle1.fontFamily,
+							
 							'&:hover': {
 								background: '#25D366',
 							},
@@ -467,7 +467,7 @@ const Facebook = () => {
 							borderRadius: 50,
 							paddingInline: 3,
 							fontSize: themeConfig.typography.subtitle1.fontSize,
-							fontFamily: themeConfig.typography.subtitle1.fontFamily,
+							
 							'&:hover': {
 								background: '#3D6AD6',
 								opacity: 0.8,

@@ -33,7 +33,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: 0,
-                fontFamily: themeConfig.typography.subtitle1.fontFamily,
+                
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },
@@ -62,7 +62,7 @@ const ChatOptions = (props) => {
 								textTransform: 'capitalize',
 								color: '#fff',
 								padding: '4px',
-								fontFamily: themeConfig.typography.subtitle1.fontFamily,
+								
 								'&:hover': {
 									background: themeConfig.palette.lyfngo.primary.main,
 								},
@@ -99,7 +99,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: "4px",
-                fontFamily: themeConfig.typography.subtitle1.fontFamily,
+                
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },
@@ -136,7 +136,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: 0,
-                fontFamily: themeConfig.typography.subtitle1.fontFamily,
+                
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },
@@ -168,7 +168,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: "4px",
-                fontFamily: themeConfig.typography.subtitle1.fontFamily,
+                
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },

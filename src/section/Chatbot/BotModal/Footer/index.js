@@ -29,14 +29,14 @@ const useStyles = makeStyles((theme) => ({
 			border: '0px',
 		},
 		'& .MuiInputBase-input': {
-			fontFamily: themeConfig.typography.h5.fontFamily,
+			
 		},
 	},
 	footerTab: {
 		height: '60px',
 		'& .MuiTypography-subtitle1': {
 			fontSize: 10,
-			fontFamily: themeConfig.typography.h3.fontFamily,
+			
 			color: '#727272',
 		},
 	},

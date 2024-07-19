@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#ECEEF5",
     "& .MuiTypography-h3": {
       fontSize: themeConfig.typography.h3.fontSize,
-      fontFamily: themeConfig.typography.h3.fontFamily,
+      
       fontWeight: 500,
       whiteSpace: "pre-line",
       lineHeight: "18px",
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 280,
     "& .MuiTypography-h3": {
       fontSize: themeConfig.typography.h3.fontSize,
-      fontFamily: themeConfig.typography.h3.fontFamily,
+      
       fontWeight: 500,
       color: "#fff",
       lineHeight: "18px",
@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
       border: `1px solid ${themeConfig?.palette?.lyfngo?.primary?.main}`,
       color: themeConfig?.palette?.lyfngo?.primary?.main || "#cccccc",
       textTransform: "capitalize",
-      fontFamily: "poppins",
       display: "flex",
       fontSize: 11,
       padding: 0,

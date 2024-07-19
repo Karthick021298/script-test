@@ -222,7 +222,6 @@ function Chatbot() {
 						height: '70px',
 						padding: '10px',
 						color: '#000',
-						fontFamily: 'Poppins',
 						fontSize: '14px',
 						fontStyle: 'normal',
 						fontWeight: 400,

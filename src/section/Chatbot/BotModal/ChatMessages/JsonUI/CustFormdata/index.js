@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		'& .MuiInputBase-root': {
 			fontSize: themeConfig.typography.subtitle1.fontSize,
-			fontFamily: themeConfig.typography.subtitle1.fontFamily,
+			
 			height: 40,
 			borderRadius: '18px',
 			background: '#fff',
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		width:'100%',
 		'& .MuiInputBase-root': {
 			fontSize: themeConfig.typography.subtitle1.fontSize,
-			fontFamily: themeConfig.typography.subtitle1.fontFamily,
+			
 			height: 40,
 			borderRadius: '0 18px 18px 0px',
 			background: '#fff',
@@ -71,7 +71,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		'& .MuiInputBase-input': {
 			fontSize: 12,
-			fontFamily: themeConfig.typography.h6.fontFamily,
+			
 			fontWeight: 400,
 		},
 	},
@@ -285,7 +285,7 @@ const CustFormdata = (props) => {
 				variant='subtitle1'
 				sx={{
 					fontSize: themeConfig.typography.subtitle1.fontSize,
-					fontFamily: themeConfig.typography.subtitle1.fontFamily,
+					
 					fontWeight: 500,
 				}}
 			>
@@ -312,7 +312,7 @@ const CustFormdata = (props) => {
 									variant='subtitle1'
 									sx={{
 										fontSize: themeConfig.typography.subtitle1.fontSize,
-										fontFamily: themeConfig.typography.subtitle1.fontFamily,
+										
 										fontWeight: 500,
 									}}
 								>
@@ -330,7 +330,6 @@ const CustFormdata = (props) => {
 							style: {
 								maxHeight: '12rem',
 								fontSize: 14,
-								fontFamily: ['"Poppins"', 'sans-serif'].join(','),
 							},
 						}}
 						className={classes.autoCompleteRoot}
@@ -426,7 +425,7 @@ const CustFormdata = (props) => {
 						variant='subtitle1'
 						sx={{
 							fontSize: themeConfig.typography.subtitle1.fontSize,
-							fontFamily: themeConfig.typography.subtitle1.fontFamily,
+							
 						}}
 					>
 						By checking this box, you agree our Terms and condition and Privacy Policy
@@ -444,7 +443,7 @@ const CustFormdata = (props) => {
 							textTransform: 'capitalize',
 							color: '#fff',
 							fontSize: themeConfig.typography.subtitle1.fontSize,
-							fontFamily: themeConfig.typography.subtitle1.fontFamily,
+							
 							'&:hover': {
 								background: themeConfig.palette.lyfngo.primary.main,
 							},

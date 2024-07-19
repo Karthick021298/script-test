@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundPosition: 'center',
 		'& .MuiTypography-h6': {
 			fontSize: 15,
-			fontFamily: themeConfig.typography.h5.fontFamily,
+			
 			color: '#fff',
 		},
 		'& .MuiTypography-body1': {
@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 			alignItems: 'center',
 			justifyContent: 'center',
 			fontSize: themeConfig.typography.h3.fontSize,
-			fontFamily: themeConfig.typography.h3.fontFamily,
+			
 			color: '#fff',
 		},
 		'& .MuiSvgIcon-root': {
