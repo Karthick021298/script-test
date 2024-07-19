@@ -10,7 +10,7 @@ import _ from "lodash";
 
 const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+export function AuthProvider({ children, domain }) {
   const pathname = usePathname();
   // console.log('pathname', pathname, pathname === '/membership/success')
   const [domainData, setDomainData] = useState({});
@@ -158,9 +158,9 @@ export function AuthProvider({ children }) {
     };
     // homePageApi.LandingPageCount({ domainName: host ? host : hostName }).then(onSuccess, onFailure)
     homePageApi
-      .LandingPageCount({ domainName: "khdemo.rigelsoftmail.in" })
+      .LandingPageCount({ domainName: domain })
       .then(onSuccess, onFailure);
-  }, []);
+  }, [domain]);
 
   useEffect(() => {
     getDomainDetails();
