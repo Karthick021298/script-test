@@ -160,7 +160,7 @@ export function AuthProvider({ children, domain }) {
     homePageApi
       .LandingPageCount({ domainName: domain })
       .then(onSuccess, onFailure);
-  }, [domain]);
+  }, []);
 
   useEffect(() => {
     getDomainDetails();
