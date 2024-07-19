@@ -1,39 +1,62 @@
-const CryptoJS = require('crypto-js')
+import CryptoJS from 'crypto-js';
 
+// Generate a random string
 function randomString(length, chars) {
-	var result = ''
-	for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)]
-	return result
+  let result = '';
+  for (let i = length; i > 0; --i) {
+    result += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return result;
 }
 
-var secretKey = CryptoJS.enc.Latin1.parse(process.env.NEXT_PUBLIC_SECRET_KEY)
-var ivKey = CryptoJS.enc.Latin1.parse(randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'))
-var publicKey = CryptoJS.enc.Latin1.stringify(ivKey)
+// Ensure secretKey is available
+const secretKeyString = 'mkoji8u7y6tgfdsxvb65tgfdre43wert';
+if (!secretKeyString) {
+  throw new Error('NEXT_PUBLIC_SECRET_KEY is not defined in the environment variables');
+}
 
-//encryption
+const secretKey = CryptoJS.enc.Latin1.parse(secretKeyString);
+
+// Generate an IV key
+const ivKeyString = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');
+const ivKey = CryptoJS.enc.Latin1.parse(ivKeyString);
+const publicKey = CryptoJS.enc.Latin1.stringify(ivKey);
+
+// Encryption function
 export const encryption = (data) => {
-	var plainText = CryptoJS.AES.encrypt(JSON.stringify(data), secretKey, {
-		iv: ivKey,
-	}).toString()
-	return { plainText, publicKey }
-}
+  const plainText = CryptoJS.AES.encrypt(JSON.stringify(data), secretKey, {
+    iv: ivKey,
+  }).toString();
+  return { plainText, publicKey };
+};
 
-//decryption
+// Decryption function
 export const decryption = (res, key) => {
-	let tempKey = key ? CryptoJS.enc.Latin1.parse(key) : CryptoJS.enc.Latin1.parse(res?.headers?.key)
-	var cipherText = CryptoJS.enc.Base64.parse(res?.data ? res?.data : res)
-	var isDecrypt = CryptoJS.lib.CipherParams.create({ ciphertext: cipherText })
-	var bytes = CryptoJS.AES.decrypt(isDecrypt, secretKey, { iv: tempKey })
-	const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-	return decryptedData
-}
+  try {
+    const tempKey = key ? CryptoJS.enc.Latin1.parse(key) : CryptoJS.enc.Latin1.parse(res?.headers?.key);
+    const cipherText = CryptoJS.enc.Base64.parse(res?.data ? res?.data : res);
+    const isDecrypt = CryptoJS.lib.CipherParams.create({ ciphertext: cipherText });
+    const bytes = CryptoJS.AES.decrypt(isDecrypt, secretKey, { iv: tempKey });
+    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    return decryptedData;
+  } catch (error) {
+    console.error('Decryption failed:', error);
+    throw new Error('Decryption failed');
+  }
+};
 
+// Failure login decryption function
 export const failureLogin = (res) => {
-	var cipherText = CryptoJS.enc.Base64.parse(res?.response?.data)
-	var isDecrypt = CryptoJS.lib.CipherParams.create({ ciphertext: cipherText })
-	var bytes = CryptoJS.AES.decrypt(isDecrypt, secretKey, {
-		iv: CryptoJS.enc.Latin1.parse(res?.response?.headers?.key),
-	})
-	const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8))
-	return decryptedData
-}
+  try {
+    const cipherText = CryptoJS.enc.Base64.parse(res?.response?.data);
+    const isDecrypt = CryptoJS.lib.CipherParams.create({ ciphertext: cipherText });
+    const bytes = CryptoJS.AES.decrypt(isDecrypt, secretKey, {
+      iv: CryptoJS.enc.Latin1.parse(res?.response?.headers?.key),
+    });
+    const decryptedData = JSON.parse(bytes.toString(CryptoJS.enc.Utf8));
+    return decryptedData;
+  } catch (error) {
+    console.error('Failure login decryption failed:', error);
+    throw new Error('Failure login decryption failed');
+  }
+};
