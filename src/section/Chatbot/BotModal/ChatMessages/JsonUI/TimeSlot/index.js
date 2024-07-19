@@ -1,3 +1,4 @@
+'use-client'
 import React, { useCallback } from 'react'
 import { Button } from '@mui/material'
 import { motion } from 'framer-motion'
@@ -174,22 +175,23 @@ const TimeSlot = (props) => {
 				// 		message: meetLink ? meetLink : `Soon you will get the meeting Link feature!`,
 				// 	},
 				// },
-				{
-					name: 'bot_msg',
-					type: 'bot',
-					jsonType: 'card',
-					component: '',
-					data: {
-						message: 'Do like to connect to our advisor? Just a Click Away! 🌟',
-					},
-				},
-				{
-					name: 'Advisor-In-AI',
-					type: 'bot',
-					jsonType: 'NonCard',
-					component: '',
-					data: {},
-				},
+				//comented for temp
+				// {
+				// 	name: 'bot_msg',
+				// 	type: 'bot',
+				// 	jsonType: 'card',
+				// 	component: '',
+				// 	data: {
+				// 		message: 'Do like to connect to our advisor? Just a Click Away! 🌟',
+				// 	},
+				// },
+				// {
+				// 	name: 'Advisor-In-AI',
+				// 	type: 'bot',
+				// 	jsonType: 'NonCard',
+				// 	component: '',
+				// 	data: {},
+				// },
 				// {
 				// 	name: 'AI-Option',
 				// 	type: 'bot',

@@ -1,7 +1,7 @@
 import { Montserrat } from "next/font/google";
 import { AuthProvider } from "../Utils/Contexts/AuthContext";
 
-const inter = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,13 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={montserrat.className}>
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>

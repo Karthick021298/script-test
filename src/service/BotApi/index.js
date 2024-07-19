@@ -86,7 +86,6 @@ export default {
 		})
 	},
 	googleMeetingLinkGeneration: (data, mastTentUuid) => {
-		console.log('mastTentUuid', mastTentUuid)
 		return axios.post(`${'https://sit.rigelsoft.com/services' + API_ENDPOINTS.GOOGLE_MEET_LINK_APPOINTMENT}/${mastTentUuid}`, data, {
 			headers: { Internal: 'LYFnGO', isAes: false },
 		})

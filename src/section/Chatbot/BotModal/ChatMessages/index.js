@@ -348,16 +348,16 @@ const ChatMessages = (props) => {
       }).then(onSuccess, onFailure);
   }, [bookModes, domainData?.mastTentUuid]);
 
-//   useEffect(() => {
-//     if (messages && document.getElementById("msgChatBot")) {
-//       const element = document.getElementById("msgChatBot");
-//       element.scrollTop = element.scrollHeight;
-//       setMessages(messages);
-//     }
-//   }, [messages]);
+  useEffect(() => {
+    if (messages && document.getElementById("msgChatBot")) {
+      const element = document.getElementById("msgChatBot");
+      element.scrollTop = element.scrollHeight;
+      setMessages(messages);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [messages]);
 
   useEffect(() => {
-	console.log('rendered')
     const localData =
       typeof window !== "undefined" ? localStorage.getItem("chatState") : null;
     const savedState = localData ? JSON.parse(localData, reviver) : null;
@@ -388,8 +388,6 @@ const ChatMessages = (props) => {
       addInitialMessages();
     }
   }, []);
-
-  console.log("message", messages);
 
   useEffect(() => {
     const localInitializedData =

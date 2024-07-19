@@ -239,7 +239,7 @@ const BotModal = (props) => {
 						jsonType: 'card',
 						component: '',
 						data: {
-							message: 'Expert Health Advisor. Just a Click Away! 🌟',
+							message: 'Expert Health Advisor. 	Just a Click Away! 🌟',
 						},
 					},
 					{

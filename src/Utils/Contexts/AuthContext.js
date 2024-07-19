@@ -165,7 +165,9 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     getDomainDetails();
   }, [getDomainDetails, updateThemeColor]);
+
   const token = null;
+
   return (
     <>
       <AuthContext.Provider
@@ -223,7 +225,6 @@ export function AuthProvider({ children }) {
       >
         {children}
       </AuthContext.Provider>
-      {/* <ToastContainer hideProgressBar={true} position='top-right' autoClose={3000} draggable style={{ top: '4.5em', fontFamily: 'Poppins' }} /> */}
     </>
   );
 }
