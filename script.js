@@ -12,9 +12,7 @@ const renderChatbot = (containerId, domain) => {
         <Chatbot />
       </AuthProvider>
     );
-    console.log(
-      `Chatbot rendered in container: ${containerId} with domain: ${domain}`
-    );
+    console.log(`Chatbot rendered in container: ${containerId} with domain: ${domain}`);
   } else {
     console.error(`Container with id ${containerId} not found.`);
   }
@@ -31,9 +29,9 @@ console.log('Environment Variables:', {
 });
 
 window.onload = function () {
-  if (typeof window.renderChatbot === "function") {
-    window.renderChatbot("chatbot-container", process.env.NEXT_PUBLIC_API_PROFILE); // Use env variable here
+  if (typeof window.renderChatbot === 'function') {
+    window.renderChatbot('chatbot-container', process.env.NEXT_PUBLIC_API_PROFILE); // Use env variable here
   } else {
-    console.error("renderChatbot function is not defined.");
+    console.error('renderChatbot function is not defined.');
   }
 };
