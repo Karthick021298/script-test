@@ -1,5 +1,5 @@
 import { API_ENDPOINTS } from '../../Constants'
-const microSiteBaseUrl = 'https://sit.rigelsoft.com/services'
+const microSiteBaseUrl = process.env.NEXT_PUBLIC_API_PROFILE
 export function ProfileUrlDetails(imageUrl) {
 	return `data:image/png;base64,${imageUrl}`
 }
