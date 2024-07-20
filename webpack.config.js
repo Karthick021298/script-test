@@ -4,6 +4,8 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
+console.log('Environment Variables:', process.env);
+
 module.exports = {
   mode: "development",
   entry: "./script.js",

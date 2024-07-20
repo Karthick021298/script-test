@@ -24,10 +24,15 @@ const renderChatbot = (containerId, domain) => {
 window.renderChatbot = renderChatbot;
 
 console.log("chatbot.bundle.js script loaded");
+console.log('Environment Variables:', {
+  apiProfile: process.env.NEXT_PUBLIC_API_PROFILE,
+  headerAccess: process.env.NEXT_PUBLIC_HEADER_ACCESS,
+  secretKey: process.env.NEXT_PUBLIC_SECRET_KEY,
+});
 
 window.onload = function () {
   if (typeof window.renderChatbot === "function") {
-    window.renderChatbot("chatbot-container"); // Pass the container ID
+    window.renderChatbot("chatbot-container", process.env.NEXT_PUBLIC_API_PROFILE); // Use env variable here
   } else {
     console.error("renderChatbot function is not defined.");
   }
