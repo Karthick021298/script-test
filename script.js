@@ -5,7 +5,7 @@ import Chatbot from "./src/section/Chatbot";
 
 const renderChatbot = (containerId, domain) => {
   const container = document.getElementById(containerId);
-  if (container) {
+  if (container && domain) {
     const root = createRoot(container);
     root.render(
       <AuthProvider domain={domain}>
