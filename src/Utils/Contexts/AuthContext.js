@@ -160,11 +160,11 @@ export function AuthProvider({ children, domain }) {
     homePageApi
       .LandingPageCount({ domainName: domain })
       .then(onSuccess, onFailure);
-  }, []);
+  }, [domain]);
 
   useEffect(() => {
     getDomainDetails();
-  }, [getDomainDetails, updateThemeColor]);
+  }, [getDomainDetails, domain]);
 
   const token = null;
 

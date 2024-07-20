@@ -2,7 +2,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
 import { Box, Grid, IconButton, Stack, TextField, Typography } from '@mui/material'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import FlashOnOutlinedIcon from '@mui/icons-material/FlashOnOutlined'
 import { themeConfig } from '../../../../theme/themesConfig'
 
