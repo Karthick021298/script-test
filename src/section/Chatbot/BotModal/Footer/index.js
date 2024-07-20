@@ -6,7 +6,7 @@ import { Grid, IconButton, Stack, TextField, Typography } from '@mui/material'
 import SendIcon from '@mui/icons-material/Send'
 import SentimentSatisfiedOutlinedIcon from '@mui/icons-material/SentimentSatisfiedOutlined'
 import { themeConfig } from '../../../../theme/themesConfig'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import _ from 'lodash'
 import useAuth from '../../../../Utils/Hooks/useAuth'
 

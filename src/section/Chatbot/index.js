@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import BotModal from './BotModal'
 import useAuth from '../../Utils/Hooks/useAuth'
