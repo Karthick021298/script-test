@@ -12,11 +12,6 @@ const nextConfig = {
       },
     ],
   },
-  env: {
-    NEXT_PUBLIC_API_PROFILE: process.env.NEXT_PUBLIC_API_PROFILE,
-    NEXT_PUBLIC_HEADER_ACCESS: process.env.NEXT_PUBLIC_HEADER_ACCESS,
-    NEXT_PUBLIC_SECRET_KEY: process.env.NEXT_PUBLIC_SECRET_KEY,
-  },
 };
 
 export default nextConfig;

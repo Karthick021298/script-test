@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-console.log('Environment Variables:', process.env);
+console.log("Environment Variables:", process.env);
 
 module.exports = {
   mode: "development",
@@ -40,9 +40,7 @@ module.exports = {
   },
   plugins: [
     new webpack.DefinePlugin({
-      "process.env.NEXT_PUBLIC_API_PROFILE": JSON.stringify(process.env.NEXT_PUBLIC_API_PROFILE),
-      "process.env.NEXT_PUBLIC_HEADER_ACCESS": JSON.stringify(process.env.NEXT_PUBLIC_HEADER_ACCESS),
-      "process.env.NEXT_PUBLIC_SECRET_KEY": JSON.stringify(process.env.NEXT_PUBLIC_SECRET_KEY),
+      'process.env': JSON.stringify(process.env),
     }),
   ],
 };

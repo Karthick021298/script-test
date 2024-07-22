@@ -30,8 +30,7 @@ console.log('Environment Variables:', {
 
 window.onload = function () {
   if (typeof window.renderChatbot === 'function') {
-    window.renderChatbot('chatbot-container', process.env.NEXT_PUBLIC_API_PROFILE); // Use env variable here
-  } else {
+    window.renderChatbot('chatbot-container');
     console.error('renderChatbot function is not defined.');
   }
 };
