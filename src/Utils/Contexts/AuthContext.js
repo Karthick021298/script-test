@@ -2,8 +2,7 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import { updateThemeColor } from "../../theme/themesConfig";
 import homePageApi from "../../service/HomePage/index";
-import { decryption, encryption, failureLogin } from "../Aes";
-import { useRouter } from "next/navigation";
+import { decryption } from "../Aes";
 import secureLocalStorage from "react-secure-storage";
 import { usePathname } from "next/navigation";
 import _ from "lodash";
@@ -12,7 +11,6 @@ const AuthContext = createContext();
 
 export function AuthProvider({ children, domain }) {
   const pathname = usePathname();
-  // console.log('pathname', pathname, pathname === '/membership/success')
   const [domainData, setDomainData] = useState({});
   const [isOpenAppointment, setIsOpenAppointment] = useState(false);
   const [BookNowBtnClick, setBookNowBtnClick] = useState(false);
@@ -22,7 +20,6 @@ export function AuthProvider({ children, domain }) {
   // const [userLogo, setUserLogo] = useState(logo);
 
   const [loading, setLoading] = useState(false);
-  const [phoneUser, setPhoneUser] = useState(null);
   // const [locDetails, setLocDetails] = useState();
   const [getProfilePic, setGetProfilePic] = useState(null);
 
@@ -112,6 +109,10 @@ export function AuthProvider({ children, domain }) {
     typeof window !== "undefined"
       ? secureLocalStorage.getItem("userUuid")
       : null;
+  const getBotSessionId =
+    typeof window !== "undefined"
+      ? secureLocalStorage.getItem("botSessionId")
+      : null;
 
   const [custName, setCustName] = useState(userName);
   const [apptBookingCustName, setApptBookingCustName] =
@@ -127,6 +128,10 @@ export function AuthProvider({ children, domain }) {
   const [bot_cheadId, setBotCheadId] = useState(getCheadId);
   const [aiStatus, aiSetStatus] = useState(getAIstatus);
   const [aiCount, setAICount] = useState(getAIcount);
+  const [faqList, setFaqList] = useState([]);
+  const [botSessionId, setBotSessionId] = useState(getBotSessionId);
+  const [selectionMode, setSelectionMode] = useState();
+  const [jsonFetch, setJsonFetch] = useState({});
   // const [mobileNumber, setMobileNumber] = useState(userMobileNUmber);
   // const [countryCode, setCountryCode] = useState(userCountryCode);
 
@@ -156,10 +161,13 @@ export function AuthProvider({ children, domain }) {
       setDomainData({});
       setLoading(false);
     };
-    // homePageApi.LandingPageCount({ domainName: host ? host : hostName }).then(onSuccess, onFailure)
     homePageApi
-      .LandingPageCount({ domainName: domain })
+      .LandingPageCount({ domainName: "testcareclinics.rigelsoft.online" })
       .then(onSuccess, onFailure);
+    // homePageApi
+    //   .LandingPageCount({ domainName: domain })
+    //   .then(onSuccess, onFailure);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [domain]);
 
   useEffect(() => {
@@ -221,6 +229,14 @@ export function AuthProvider({ children, domain }) {
           aiCount,
           setAICount,
           userUuid,
+          setFaqList,
+          faqList,
+          botSessionId,
+          setBotSessionId,
+          selectionMode,
+          setSelectionMode,
+          jsonFetch,
+          setJsonFetch,
         }}
       >
         {children}

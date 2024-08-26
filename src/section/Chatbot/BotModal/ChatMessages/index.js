@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     background: "#ECEEF5",
     "& .MuiTypography-h3": {
       fontSize: themeConfig.typography.h3.fontSize,
-      
+
       fontWeight: 500,
       whiteSpace: "pre-line",
       lineHeight: "18px",
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 280,
     "& .MuiTypography-h3": {
       fontSize: themeConfig.typography.h3.fontSize,
-      
+
       fontWeight: 500,
       color: "#fff",
       lineHeight: "18px",
@@ -137,7 +137,7 @@ const ChatMessages = (props) => {
       jsonType: "card",
       component: "",
       data: {
-        message: `Please provide your information to engage with an AI-powered chatbot experience. 🤖💡`,
+        message: `Please provide your information to engage with our chatbot experience. 🤖💡`,
       },
     },
     {
@@ -353,7 +353,7 @@ const ChatMessages = (props) => {
       element.scrollTop = element.scrollHeight;
       setMessages(messages);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [messages]);
 
   useEffect(() => {
@@ -569,6 +569,13 @@ const ChatMessages = (props) => {
             message: "Internal Error. Try again or please try after sometime",
           },
         },
+        {
+          name: "ChooseChatOption",
+          type: "bot",
+          jsonType: "NonCard",
+          component: "ChatOption",
+          data: {},
+        },
       ]);
       // saveLoggedChats([
       // 	{
@@ -582,10 +589,33 @@ const ChatMessages = (props) => {
       // 	},
       // ])
     };
-    if (chead_id !== null && token !== null) {
-      BotApi.waitRequest(chead_id).then(onSuccess, onFailure);
+    // if (chead_id !== null && token !== null) {
+    //   console.log('1', chead_id, token)
+    //   BotApi.waitRequest(chead_id).then(onSuccess, onFailure);
+    // } else {}
+    if (bot_cheadId !== null) {
+      BotApi.waitRequest(bot_cheadId).then(onSuccess, onFailure);
     } else {
-      bot_cheadId && BotApi.waitRequest(bot_cheadId).then(onSuccess, onFailure);
+      setLoading(false);
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          name: "RequestFailure",
+          type: "bot",
+          jsonType: "card",
+          component: "",
+          data: {
+            message: "Internal Error. Try again or please try after sometime",
+          },
+        },
+        {
+          name: "ChooseChatOption",
+          type: "bot",
+          jsonType: "NonCard",
+          component: "ChatOption",
+          data: {},
+        },
+      ]);
     }
   };
 
@@ -733,7 +763,7 @@ const ChatMessages = (props) => {
         jsonType: "card",
         component: "",
         data: {
-          message: `Please provide your information to engage with an AI-powered chatbot experience at Kauvery Hospital 🏥`,
+          message: `Please provide your information to engage with our chatbot experience. 🤖💡`,
         },
       },
       {
@@ -922,7 +952,9 @@ const ChatMessages = (props) => {
                   <TimeSlot
                     setMessages={setMessages}
                     // saveLoggedChats={saveLoggedChats}
-                    availSlot={availSlot}
+                    availSlot={
+                      _.isEmpty(availSlot) ? cmp?.component : availSlot
+                    }
                     bookModes={bookModes}
                     selectedDate={selectedDate}
                     setSelectedDate={setSelectedDate}

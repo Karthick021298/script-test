@@ -6,10 +6,34 @@ import React from "react";
 import { themeConfig } from "../../../../../../theme/themesConfig";
 import useAuth from "../../../../../../Utils/Hooks/useAuth";
 
+const useStyles = makeStyles((theme) => ({
+  bookApptBtn: {
+    display: "flex",
+    justifyContent: "center",
+    "&.MuiButtonBase-root": {
+      width: "136px",
+      height: "33px",
+      background: themeConfig.palette.lyfngo.primary.main,
+      textTransform: "capitalize",
+      color: "#fff",
+      padding: 0,
+
+      "&:hover": {
+        background: themeConfig.palette.lyfngo.primary.main,
+      },
+      fontSize: themeConfig.typography.subtitle1.fontSize,
+      "&.Mui-disabled": {
+        background: "#CFD1D7",
+      },
+    },
+  },
+}));
+
 const ChatOptions = (props) => {
   const { bookDemo, currentState, cmpName, chatUs, aiChat, loggedInChead } =
     props;
   const { token } = useAuth();
+  const classes = useStyles();
   return (
     <div style={{ display: "flex", gap: 6, marginLeft: 44 }}>
       {cmpName === "ChooseChatOption" ? (
@@ -26,22 +50,7 @@ const ChatOptions = (props) => {
             }}
           >
             <Button
-              sx={{
-                width: "136px",
-                height: "33px",
-                background: themeConfig.palette.lyfngo.primary.main,
-                textTransform: "capitalize",
-                color: "#fff",
-                padding: 0,
-                
-                "&:hover": {
-                  background: themeConfig.palette.lyfngo.primary.main,
-                },
-                fontSize: themeConfig.typography.subtitle1.fontSize,
-                "&.Mui-disabled": {
-                  background: "#CFD1D7",
-                },
-              }}
+              className={classes.bookApptBtn}
               variant="outlined"
               style={{ borderRadius: "16px" }}
               onClick={bookDemo}
@@ -50,33 +59,28 @@ const ChatOptions = (props) => {
               Book Appointment
             </Button>
           </motion.div>
-          {/* <motion.div
-						whileTap={{ scale: 0.95 }}
-						style={{ borderRadius: '16px', overflow: 'hidden', width: '102px', height: '32px', display: 'flex', alignSelf: 'flex-end' }}
-					>
-						<Button
-							sx={{
-								minWidth: '102px',
-								height: '33px',
-								background: themeConfig.palette.lyfngo.primary.main,
-								textTransform: 'capitalize',
-								color: '#fff',
-								padding: '4px',
-								
-								'&:hover': {
-									background: themeConfig.palette.lyfngo.primary.main,
-								},
-								fontSize: themeConfig.typography.subtitle1.fontSize,
-							}}
-							variant='outlined'
-							style={{ borderRadius: '16px' }}
-							onClick={() => {
-								token !== null ? loggedInChead('Advisor') : chatUs('Advisor')
-							}}
-						>
-							Advisor
-						</Button>
-					</motion.div> */}
+          <motion.div
+            whileTap={{ scale: 0.95 }}
+            style={{
+              borderRadius: "16px",
+              overflow: "hidden",
+              width: "102px",
+              height: "32px",
+              display: "flex",
+              alignSelf: "flex-end",
+            }}
+          >
+            <Button
+              className={classes.bookApptBtn}
+              variant="outlined"
+              style={{ borderRadius: "16px" }}
+              onClick={() => {
+                token !== null ? loggedInChead("Advisor") : chatUs("Advisor");
+              }}
+            >
+              Advisor
+            </Button>
+          </motion.div>
         </>
       ) : cmpName === "Advisor-In-AI" ? (
         <>
@@ -92,19 +96,7 @@ const ChatOptions = (props) => {
             }}
           >
             <Button
-              sx={{
-                minWidth: "102px",
-                height: "33px",
-                background: themeConfig.palette.lyfngo.primary.main,
-                textTransform: "capitalize",
-                color: "#fff",
-                padding: "4px",
-                
-                "&:hover": {
-                  background: themeConfig.palette.lyfngo.primary.main,
-                },
-                fontSize: themeConfig.typography.subtitle1.fontSize,
-              }}
+              className={classes.bookApptBtn}
               variant="outlined"
               style={{ borderRadius: "16px" }}
               onClick={() => {
@@ -136,7 +128,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: 0,
-                
+
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },
@@ -168,7 +160,7 @@ const ChatOptions = (props) => {
                 textTransform: "capitalize",
                 color: "#fff",
                 padding: "4px",
-                
+
                 "&:hover": {
                   background: themeConfig.palette.lyfngo.primary.main,
                 },

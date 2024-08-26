@@ -8,7 +8,27 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "**",
+        hostname: "ik.imagekit.io",
+      },
+      {
+        protocol: "https",
+        hostname: "uat.rigelsoft.com",
+      },
+      {
+        protocol: "https",
+        hostname: "sit.rigelsoft.com",
+      },
+      {
+        protocol: "https",
+        hostname: "services.lyfngo.com",
+      },
+      {
+        protocol: "https",
+        hostname: "lyfngo.com",
+      },
+      {
+        protocol: "https",
+        hostname: "d1cdqhtb2bf9h4.cloudfront.net",
       },
     ],
   },

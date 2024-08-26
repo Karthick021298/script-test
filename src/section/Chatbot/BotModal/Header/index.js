@@ -1,8 +1,7 @@
 'use-client'
 import React from 'react'
 import { makeStyles } from '@material-ui/core'
-import { Box, Grid, IconButton, Stack, TextField, Typography } from '@mui/material'
-import Image from 'next/image'
+import { Avatar, Box, Grid, IconButton, Stack, TextField, Typography } from '@mui/material'
 import FlashOnOutlinedIcon from '@mui/icons-material/FlashOnOutlined'
 import { themeConfig } from '../../../../theme/themesConfig'
 
@@ -41,7 +40,7 @@ const Header = (props) => {
 			<Grid item xs={2}>
 				<Grid container className={classes.root} alignItems={'center'} alignContent={'center'} textAlign={'center'}>
 					<Grid item xs={1.5}>
-						<Image
+						<Avatar
 							src={
 								domainData?.tentLogoDoc
 									? domainData?.tentLogoDoc
@@ -49,11 +48,8 @@ const Header = (props) => {
 									? 'https://ik.imagekit.io/LyfngoDev/B2B_Flash/Header/Care.svg'
 									: 'https://ik.imagekit.io/LyfngoDev/B2B_Flash/Header/Non_Care.svg'
 							}
-							alt='Happy Clinic Logo'
+							alt='Logo'
 							style={{ width: '50px', height: '50px', borderRadius: '50%' }}
-							width={100}
-							height={100}
-							priority={true}
 						/>
 					</Grid>
 					<Grid item xs={9.5} className={classes.headerName}>

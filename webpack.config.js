@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-console.log("Environment Variables:", process.env);
+// console.log("Environment Variables:", process.env);
 
 module.exports = {
   mode: "development",

@@ -1,10 +1,9 @@
-'use client'
+"use client";
 import Chatbot from "@/section/Chatbot";
+import ChatbotNew from "@/section/ChatbotNew";
+import useAuth from "@/Utils/Hooks/useAuth";
 
 export default function Home() {
-  return (
-    <>
-      <Chatbot />
-    </>
-  );
+  const { domainData } = useAuth();
+  return <>{domainData?.isBot ? <Chatbot /> : <ChatbotNew />}</>;
 }
